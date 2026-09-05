@@ -1,0 +1,151 @@
+/* ============================================================
+   Salvia — Estilos de la página "Iniciar sesión"
+   Variables de la paleta de colores y tipografía
+   ============================================================ */
+:root {
+  --color-bg: #F7F5EF;          /* fondo general, tono cálido tipo papel */
+  --color-surface: #FFFFFF;     /* tarjetas y superficies */
+  --color-ink: #23302A;         /* texto principal */
+  --color-ink-soft: #5B6960;    /* texto secundario */
+  --color-placeholder: #9BA79E; /* texto de los placeholders */
+  --color-border: #E4E0D4;      /* bordes sutiles */
+
+  --color-sage: #4F7566;        /* color de marca */
+  --color-sage-dark: #35544A;   /* hover / estados oscuros */
+  --color-sage-light: #DDE8E1;  /* fondos suaves y foco de inputs */
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+
+  --radius-sm: 8px;
+  --radius-lg: 28px;
+  --transition: 0.2s ease;
+}
+
+/* ============ Reinicio básico ============ */
+*, *::before, *::after { box-sizing: border-box; }
+
+.auth-body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  line-height: 1.55;
+}
+
+/* Estado de foco visible para navegación por teclado */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--color-sage-dark);
+  outline-offset: 2px;
+}
+
+/* ============ Layout de la tarjeta ============ */
+.auth-layout {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 20px 40px -24px rgba(35, 48, 42, 0.2);
+}
+
+.auth-header { text-align: center; margin-bottom: var(--space-lg); }
+
+/* ============ Logo ============ */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.logo__icon { flex-shrink: 0; }
+.justify-center { justify-content: center; width: 100%; }
+
+.auth-title {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.auth-subtitle { margin: 0; font-size: 0.95rem; color: var(--color-ink-soft); }
+
+/* ============ Formulario ============ */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group-header { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-sm); }
+
+.form-label { font-size: 0.85rem; font-weight: 600; }
+
+.form-input {
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.form-input::placeholder { color: var(--color-placeholder); }
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-sage);
+  box-shadow: 0 0 0 3px var(--color-sage-light);
+}
+
+/* ============ Enlaces ============ */
+.auth-link { color: var(--color-sage-dark); font-weight: 600; text-decoration: none; }
+.auth-link:hover { text-decoration: underline; }
+.auth-link--sm { font-size: 0.8rem; font-weight: 500; }
+
+/* ============ Botón ============ */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn--primary { background: var(--color-sage); color: #FFFFFF; }
+.btn--primary:hover { background: var(--color-sage-dark); }
+.btn--full { width: 100%; }
+
+/* ============ Pie de la tarjeta ============ */
+.auth-footer { text-align: center; font-size: 0.9rem; color: var(--color-ink-soft); }
+.auth-footer p { margin: 0; }
+
+/* ============ Responsive ============ */
+@media (max-width: 420px) {
+  .auth-card { padding: var(--space-md); }
+}

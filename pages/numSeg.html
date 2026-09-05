@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurar Cuenta — Salvia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../estilos/stylesRecuperar.css" />
+</head>
+<body class="auth-body">
+
+  <main class="auth-layout">
+    <div class="auth-card">
+      <div class="auth-header">
+        <a href="../index.html" class="logo justify-center">
+          <svg class="logo__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+            <path d="M12 21c-4.2-2-7-6-7-10.2A7 7 0 0 1 19 10.8C19 15 16.2 19 12 21Z" fill="var(--color-sage)" />
+            <path d="M12 21V8" stroke="var(--color-sage-dark)" stroke-width="1.3" fill="none" />
+          </svg>
+          Salvia
+        </a>
+        <h1 class="auth-title">Confirma tu número de seguro</h1>
+        <p class="auth-subtitle">Verificamos tu correo. Ahora ingresa tu número de seguro para continuar.</p>
+      </div>
+
+      <!-- Paso 2 de 2: continúa con un enlace, sin lógica real detrás -->
+      <div class="auth-form">
+        <div class="form-group">
+          <label for="numeroSeguro" class="form-label">Número de seguro</label>
+          <input type="text" id="numeroSeguro" name="numeroSeguro" class="form-input" placeholder="Ej. 0001-2024-0587" required />
+        </div>
+
+        <a href="iniciarSesion.html" class="btn btn--primary btn--full">Enviar enlace de restauración</a>
+      </div>
+
+      <div class="auth-footer">
+        <a href="iniciarSesion.html" class="auth-link">Volver a iniciar sesión</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
