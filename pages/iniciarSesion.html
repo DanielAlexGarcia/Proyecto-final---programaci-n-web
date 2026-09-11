@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../estilos/stylesLogin.css">
+  <link rel="stylesheet" href="../css/stylesLogin.css">
 </head>
 <body class="auth-body">
 
@@ -44,7 +44,9 @@
           <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required />
         </div>
 
-        <button type="submit" class="btn btn--primary btn--full">Iniciar sesión</button>
+        <!--<button type="button" class="btn btn--primary btn--full" onclick="window.location.href='./inicio.html'">Iniciar sesión</button>
+        Cambiamos el boton por un enlace para poder acceder a la pagina de inicio durante pruebas-->
+        <a href="./inicio.html" class="btn btn--primary btn--full">Iniciar sesión</a>
       </form>
 
       <div class="auth-footer">
