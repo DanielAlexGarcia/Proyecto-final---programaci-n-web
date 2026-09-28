@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro de paciente</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Registro de paciente</h1>
+
+    <form id="formPaciente">
+
+        <label>Nombre:</label>
+        <br>
+        <input type="text" id="nombre">
+
+        <br><br>
+
+        <label>Correo:</label>
+        <br>
+        <input type="email" id="correo">
+
+        <br><br>
+
+        <label>Edad:</label>
+        <br>
+        <input type="number" id="edad">
+
+        <br><br>
+
+        <button type="submit">
+            Registrar
+        </button>
+
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script>
+
+        $("#formPaciente").on("submit", function(event) {
+
+            event.preventDefault();
+
+            let nombre = $("#nombre").val();
+            let correo = $("#correo").val();
+            let edad = $("#edad").val();
+
+            let errores = [];
+
+            if (nombre === "") {
+                errores.push("El nombre es obligatorio.");
+            }
+
+            if (correo === "") {
+                errores.push("El correo es obligatorio.");
+            }
+
+            if (edad === "") {
+                errores.push("La edad es obligatoria.");
+            }
+
+            if (edad < 18) {
+                errores.push("El paciente debe tener al menos 18 años.");
+            }
+
+            if (errores.length > 0) {
+
+                $("#mensaje").html("");
+
+                for (let i = 0; i < errores.length; i++) {
+
+                    $("#mensaje").append(
+                        "<p>" + errores[i] + "</p>"
+                    );
+
+                }
+
+            } else {
+
+                $("#mensaje").html(
+                    "<strong>Paciente registrado correctamente.</strong>"
+                );
+
+                $("#formPaciente")[0].reset();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
