@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taller de Popper.js - Menú Principal</title>
+<style>
+  :root {
+    --primary: #5b5bf0;
+    --primary-gradient: linear-gradient(135deg, #5b5bf0, #8b5cf6);
+    --bg: #f4f5fb;
+    --card-bg: #ffffff;
+    --text-main: #1d2033;
+    --text-muted: #6a6f87;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .contenedor {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  header p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  /* Grid de ejercicios */
+  .grid-ejercicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    text-align: left;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(40, 40, 100, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(91, 91, 240, 0.15);
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    width: fit-content;
+  }
+
+  /* Colores según nivel */
+  .badge.facil { background: #e0f2fe; color: #0369a1; }
+  .badge.normal { background: #fef3c7; color: #b45309; }
+  .badge.profesional { background: #fce7f3; color: #be185d; }
+
+  .card h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+  }
+
+  .card p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--primary-gradient);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: opacity 0.2s;
+  }
+
+  .btn:hover {
+    opacity: 0.9;
+  }
+
+  footer {
+    margin-top: 40px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+  <header>
+    <h1>Taller Práctico de Popper.js</h1>
+    <p>Aprende a posicionar elementos flotantes en interfaces web de forma profesional.</p>
+  </header>
+
+  <div class="grid-ejercicios">
+    <!-- Ejercicio 1: Fácil -->
+    <div class="card">
+      <div>
+        <span class="badge facil">Nivel 1: Fácil</span>
+        <h3>Tooltip Básico</h3>
+        <p>Introducción a Popper.js. Crea un tooltip estático que se posiciona en los cuatro lados de un botón al pasar el mouse.</p>
+      </div>
+      <!-- Cambia 'ejercicio1.html' por el nombre real de tu archivo -->
+      <a href="./01-basico-tooltip.html" class="btn">Ver Ejercicio</a>
+    </div>
+
+    <!-- Ejercicio 2: Normal -->
+    <div class="card">
+      <div>
+        <span class="badge normal">Nivel 2: Normal</span>
+        <h3>tooltip personalizable</h3>
+        <p>Aprende como se contruye un tooltip con popper.js y ve en tiempo real como cada parametro modifica la apariencia del tooltip.</p>
+      </div>
+      <!-- Cambia 'ejercicio2.html' por el nombre real de tu archivo -->
+      <a href="./02-personalizacion.html" class="btn">Ver Ejercicio</a>
+    </div>
+
+    <!-- Ejercicio 3: Profesional -->
+    <div class="card">
+      <div>
+        <span class="badge profesional">Nivel 3: Profesional</span>
+        <h3>Menu practico comun en proyectos profesionales</h3>
+        <p>Mira un ejemplo de como se implementaria en un proyecto real </p>
+      </div>
+      <!-- Cambia 'ejercicio3.html' por el nombre real de tu archivo -->
+      <a href="./03-profesional-dropdowns.html" class="btn">Ver Ejercicio</a>
+    </div>
+  </div>
+
+    <footer>
+        <!--  &copy; 2026  -->  
+    </footer>
+</div>
+
+</body>
+</html>
